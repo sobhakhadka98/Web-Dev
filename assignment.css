@@ -26,7 +26,6 @@ h1{
 }
 
 input, select{
-	margin-bottom: : 20px;
 	min-width: 20%;
 }
 
@@ -38,4 +37,8 @@ table, tr, td{
 td>input{
 	border: 0px;
 	/*height: 100%;*/
+}
+
+div{
+	padding-bottom: 10px;
 }

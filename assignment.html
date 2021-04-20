@@ -8,274 +8,185 @@
 	<div class="regForm">
 		<div class="container">
 			<h1>STUDENT REGISTRATION FORM</h1>
-			<form action="/register.php">
-				<label for="name">Name:
-					<input type="text" name="name" >
-				</label>
-				<!-- <br>
-				<label for="middleName">Middle Name:</label>
+			<form action="#">
+				<div>
+					<label for="name">Full Name:
+						<input type="text" name="name" >
+					</label>
+				</div>
+				
+				<!-- <label for="middleName">Middle Name:</label>
 				<input type="text" name="middleName"><br>
 				<label for="lastName">Last Name:</label>
-				<input type="text" name="lasttName"> -->
+				<input type="text" name="lasttName">  -->
 
-				<br>
-
-				<label for="DOB">Date of Birth:
-					<select name="birthDate">
-						<option value="0">Day</option>
-						<option value="1">1</option>
-						<option value="2">2</option>
-						<option value="3">3</option>
-						<option value="4">4</option>
-						<option value="5">5</option>
-						<option value="6">6</option>
-						<option value="7">7</option>
-						<option value="8">8</option>
-						<option value="9">9</option>
-						<option value="10">10</option>
-						<option value="11">11</option>
-						<option value="12">12</option>
-						<option value="13">13</option>
-						<option value="14">14</option>
-						<option value="15">15</option>
-						<option value="16">16</option>
-						<option value="17">17</option>
-						<option value="18">18</option>
-						<option value="19">19</option>
-						<option value="20">20</option>
-						<option value="21">21</option>
-						<option value="22">22</option>
-						<option value="23">23</option>
-						<option value="24">24</option>
-						<option value="25">25</option>
-						<option value="26">26</option>
-						<option value="27">27</option>
-						<option value="28">28</option>
-						<option value="29">29</option>
-						<option value="30">30</option>
-						<option value="31">31</option>
-					</select>
-					<select name="birthMonth">
-						<option value="-1">Month:</option>
-						<option value="January">Jan</option>
-						<option value="February">Feb</option>
-						<option value="March">Mar</option>
-						<option value="April">Apr</option>
-						<option value="May">May</option>
-						<option value="June">Jun</option>
-						<option value="July">Jul</option>
-						<option value="August">Aug</option>
-						<option value="September">Sep</option>
-						<option value="October">Oct</option>
-						<option value="November">Nov</option>
-						<option value="December">Dec</option>
-					</select>
-					<select name="birthYear">
-						<option value="-1">Year:</option>
-						<option value="2012">2012</option>
-						<option value="2011">2011</option>
-						<option value="2010">2010</option>
-						<option value="2009">2009</option>
-						<option value="2008">2008</option>
-						<option value="2007">2007</option>
-						<option value="2006">2006</option>
-						<option value="2005">2005</option>
-						<option value="2004">2004</option>
-						<option value="2003">2003</option>
-						<option value="2002">2002</option>
-						<option value="2001">2001</option>
-						<option value="2000">2000</option>
-						<option value="1999">1999</option>
-						<option value="1998">1998</option>
-						<option value="1997">1997</option>
-						<option value="1996">1996</option>
-						<option value="1995">1995</option>
-						<option value="1994">1994</option>
-						<option value="1993">1993</option>
-						<option value="1992">1992</option>
-						<option value="1991">1991</option>
-						<option value="1990">1990</option>
-					</select>
-				</label>
+				<div>
+					<label for="DOB">Date of Birth:
+						<input type="date" name="DOB">
+					</label>
+				</div>
+				<div>
+					<label for="email">Email Id:
+						<input type="email" name="email">
+					</label>
+				</div>
+				<div>
+					<label for="mobile">Mobile no.:
+						<input type="tel" name="mobile" pattern="[0-9]{10}">
+					(Format: 10 digit phone number)</label>
+				</div>
+				<div>
+					<label for="gender">Gender:</label><br>
 				
-
-				<br>
-
-				<label for="email">Email Id:
-					<input type="email" name="email">
-				</label>
+					<label for="male">
+						<input type="radio" id="male" name="gender" value="male">
+					Male</label><br>
+					
+					<label for="female">
+						<input type="radio" id="female" name="gender" value="female">
+					Female</label><br>
+					
+					<label for="other">
+						<input type="radio" id="other" name="gender" value="other">
+					Prefer not to say</label><br>
+				</div>
+				<div>
+					<label>Category:
+						<select>
+							<option>Select</option>
+							<option>General</option>
+							<option>OBC</option>
+							<option>ST</option>
+							<option>SC</option>
+						</select>
+					</label>
+				</div>
+				<div>
+					<label>Blood Group:
+						<select>
+							<option>Select</option>
+							<option>AB+</option>
+							<option>AB-</option>
+							<option>A+</option>
+							<option>A-</option>
+							<option>B+</option>
+							<option>B-</option>
+							<option>O+</option>
+							<option>O-</option>
+						</select>
+					</label>
+				</div>
 				
-
-				<br>
-
-				<label for="mobile">Mobile no.:
-					<input type="text" name="mobile">
-				</label>
-				
-
-				<br>
-
-				<label for="gender">Gender:</label><br>
-				
-				<label for="male">
-					<input type="radio" id="male" name="gender" value="male">
-				Male</label><br>
-				
-				<label for="female">
-					<input type="radio" id="female" name="gender" value="female">
-				Female</label><br>
-				
-				<label for="other">
-					<input type="radio" id="other" name="gender" value="other">
-				Prefer not to say</label><br>
-
-				<br>
-
-				<label>Category:
-					<select>
-						<option>Select</option>
-						<option>General</option>
-						<option>OBC</option>
-						<option>ST</option>
-						<option>SC</option>
-					</select>
-					<label>Blood Group:</label>
-					<select>
-						<option>Select</option>
-						<option>AB+</option>
-						<option>AB-</option>
-						<option>A+</option>
-						<option>A-</option>
-						<option>B+</option>
-						<option>B-</option>
-						<option>O+</option>
-						<option>O-</option>
-					</select>
-				</label>
-				
-
-				<br>
-
 				<fieldset>
 					<legend>Current Address</legend>
-					<label for="street1">Street Address:
-						<input type="textarea" name="street1">
-					</label>
-					
-
-					<br>
-
-					<label for="city1">City:
-						<input type="text" name="city1">
-					</label>
-					<label for="state1">State:
-						<input type="text" name="state1">
-					</label>
-					
-
-					<br>
-
-					<label for="zip1">Zip Code:
-						<input type="text" name="zip1">
-					</label>
-					<label for="country1">Country:
-						<input type="text" name="country1">
-					</label>
+					<div>
+						<label for="street1">Street Address:
+							<input type="text" name="street1">
+						</label>
+					</div>
+					<div>
+						<label for="city1">City:
+							<input type="text" name="city1">
+						</label>
+						<label for="state1">State:
+							<input type="text" name="state1">
+						</label>
+					</div>
+					<div>
+						<label for="zip1">Zip Code:
+							<input type="text" name="zip1" pattern="[0-9]{6}" placeholder="6 digit pincode">
+						</label>
+						<label for="country1">Country:
+							<input type="text" name="country1">
+						</label>
+					</div>
 				</fieldset>
-
-				<br>
-
 				<fieldset>
 					<legend>Permanent Address</legend>
 					<input type="checkbox" name="repeat">
-					<label for="repeat">Same as Current Address</label><br>
-					<label for="street2">Street Address:
-						<input type="textarea" name="street2">
-					</label>
-					
-
-					<br>
-
-					<label for="city2">City:
-						<input type="text" name="city2">
-					</label>
-					<label for="state2">State:
-						<input type="text" name="state2">
-					</label>
-					
-
-					<br>
-
-					<label for="zip2">Zip Code:
-						<input type="text" name="zip2">
-					</label>
-					<label for="country2">Country:
-						<input type="text" name="country2">
-					</label>
-					
+					<label for="repeat">Same as Current Address</label>
+					<div>
+						<label for="street2">Street Address:
+							<input type="text" name="street2">
+						</label>
+					</div>
+					<div>
+						<label for="city2">City:
+							<input type="text" name="city2">
+						</label>
+						<label for="state2">State:
+							<input type="text" name="state2">
+						</label>
+					</div>
+					<div>
+						<label for="zip2">Zip Code:
+							<input type="text" name="zip2" pattern="[0-9]{6}" placeholder="6 digit pincode">
+						</label>
+						<label for="country2">Country:
+							<input type="text" name="country2">
+						</label>
+					</div>
 				</fieldset>
-
-				<br>
-
-				<label for="qualification">Qualification</label>
-				<table>
-					<tr>
-						<th></th>
-						<th>%/CGPA</th>
-						<th>Year of Passing</th>
-					</tr>
-					<tr>
-						<td>Class 10</td>
-						<td><input type="text" name="10percent"></td>
-						<td><input type="number" name="10yop"></td>
-					</tr>
-					<tr>
-						<td>Class 12</td>
-						<td><input type="text" name="12percent"></td>
-						<td><input type="number" name="12yop"></td>
-					</tr>
-					<tr>
-						<td>Diploma</td>
-						<td><input type="text" name="diplomaPercent"></td>
-						<td><input type="number" name="diplomaYop"></td>
-					</tr>
-				</table>
-
-				<br>
-
-				<label for="courses">Course Applying for:
-					<select name="course">
-						<option value="-1">Select:</option>
-						<option value="1">B.Tech</option>
-						<option value="2">B.Arch</option>
-						<option value="3">Int. MSc</option>
-						<option value="4">M.Tech</option>
-						<option value="5">MCA</option>
-					</select>
-				</label>
-
-				<br>
-
-				<!-- will only be visible if a student selects B.Tech or M.Tech -->
-				<label for="specialization">Specialization:
-					<select name="course">
-						<option value="-1">Select:</option>
-						<option value="1">Civil Engineering</option>
-						<option value="2">Computer Science and Engineering</option>
-						<option value="3">Mechanical Engineering</option>
-						<option value="4">Electrical Engineering</option>
-						<option value="5">Electrical and Electronics Engineering</option>
-						<option value="6">Electronics and Telecommunication Engineering</option>
-						<option value="7">Information Technology</option>
-						<option value="8">Production Engineering</option>
-						<option value="9">Chemical Engineering</option>
-						<option value="10">Matellurgy and Materials Engineering</option>
-					</select>
-				</label>
+				<div>
+					<label for="qualification">Qualification</label>
+					<table>
+						<tr>
+							<th></th>
+							<th>%/CGPA</th>
+							<th>Year of Passing</th>
+						</tr>
+						<tr>
+							<td>Class 10</td>
+							<td><input type="text" name="10percent"></td>
+							<td><input type="month" name="10yop"></td>
+						</tr>
+						<tr>
+							<td>Class 12</td>
+							<td><input type="text" name="12percent"></td>
+							<td><input type="month" name="12yop"></td>
+						</tr>
+						<tr>
+							<td>Diploma</td>
+							<td><input type="text" name="diplomaPercent"></td>
+							<td><input type="month" name="diplomaYop"></td>
+						</tr>
+					</table>
+				</div>
+				
+				<div>
+					<label for="courses">Course Applying for:
+						<select name="course">
+							<option value="-1">Select:</option>
+							<option value="1">B.Tech</option>
+							<option value="2">B.Arch</option>
+							<option value="3">Int. MSc</option>
+							<option value="4">M.Tech</option>
+							<option value="5">MCA</option>
+						</select>
+					</label>
+				</div>
 				
 
-				<br>
-
+				<!-- will only be visible if a student selects B.Tech or M.Tech -->
+				<div>
+					<label for="specialization">Specialization:
+						<select name="course">
+							<option value="-1">Select:</option>
+							<option value="1">Civil Engineering</option>
+							<option value="2">Computer Science and Engineering</option>
+							<option value="3">Mechanical Engineering</option>
+							<option value="4">Electrical Engineering</option>
+							<option value="5">Electrical and Electronics Engineering</option>
+							<option value="6">Electronics and Telecommunication Engineering</option>
+							<option value="7">Information Technology</option>
+							<option value="8">Production Engineering</option>
+							<option value="9">Chemical Engineering</option>
+							<option value="10">Matellurgy and Materials Engineering</option>
+						</select>
+					</label>
+				</div>
+				
+				
 				<input type="Submit" name="Submit">
 
 			</form>
