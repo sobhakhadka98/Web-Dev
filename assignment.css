@@ -31,7 +31,7 @@ input, select{
 
 table, tr, td{
 	border-collapse: collapse;
-	border: 2px solid grey;
+	border: 2px solid gray;
 }
 
 td>input{
@@ -41,4 +41,16 @@ td>input{
 
 div{
 	padding-bottom: 10px;
+}
+
+.specialization {
+	display: none;
+}
+
+.Bachelors{
+	display: none;
+}
+
+.rightSide{
+	float: right;
 }
