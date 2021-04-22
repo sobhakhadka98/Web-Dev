@@ -1,6 +1,5 @@
 var repeat = document.getElementById("repeat");
 var courses = document.querySelector("#courses");
-// var selectedValue = courses.options[courses.selectedIndex].value;
 var spec = document.querySelector("#spec");
 var bachelor = document.querySelector("#bachelor");
 
@@ -20,12 +19,6 @@ repeat.onclick = () => {
     }
 }
 
-// if(courses.value == "B.Tech" || courses.value == "M.Tech"){
-//     specialization.classList.remove("specialization");
-// } else {
-//     specialization.classList.add("specialization");
-// }
-
 courses.onclick = () => {
     if (courses.selectedIndex == 1 || courses.selectedIndex == 4)
     {
@@ -42,19 +35,3 @@ courses.onclick = () => {
     }
 };
 
-// courses.onclick = () => {
-    
-// }
-
-// function toCheck(){
-//     var repeat = document.getElementById("repeat");
-//     if(repeat.checked == true)
-//         alert("checked");
-// }
-
-// document.getElementById("repeat").addEventListener("click", () => {
-//     alert("clicked");
-// });
-
-// var repeat = document.getElementById("repeat");
-// var b = 5;
