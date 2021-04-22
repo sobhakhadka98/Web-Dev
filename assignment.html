@@ -3,6 +3,7 @@
 <head>
 	<title>Student Registration Form</title>
 	<link rel="stylesheet" type="text/css" href="assignment.css">
+	
 </head>
 <body>
 	<div class="regForm">
@@ -11,7 +12,7 @@
 			<form action="#">
 				<div>
 					<label for="name">Full Name:
-						<input type="text" name="name" >
+						<input type="text" name="name" required>
 					</label>
 				</div>
 				
@@ -22,21 +23,21 @@
 
 				<div>
 					<label for="DOB">Date of Birth:
-						<input type="date" name="DOB">
+						<input type="date" name="DOB" required id="DOB">
 					</label>
 				</div>
 				<div>
 					<label for="email">Email Id:
-						<input type="email" name="email">
+						<input type="email" name="email" required>
 					</label>
 				</div>
 				<div>
 					<label for="mobile">Mobile no.:
-						<input type="tel" name="mobile" pattern="[0-9]{10}">
+						<input type="tel" name="mobile" pattern="[0-9]{10}" required>
 					(Format: 10 digit phone number)</label>
 				</div>
 				<div>
-					<label for="gender">Gender:</label><br>
+					<label for="gender" >Gender:</label><br>
 				
 					<label for="male">
 						<input type="radio" id="male" name="gender" value="male">
@@ -81,49 +82,51 @@
 					<legend>Current Address</legend>
 					<div>
 						<label for="street1">Street Address:
-							<input type="text" name="street1">
+							<input type="text" name="street1" id="street1" required>
 						</label>
 					</div>
 					<div>
 						<label for="city1">City:
-							<input type="text" name="city1">
+							<input type="text" name="city1" id="city1" required>
 						</label>
-						<label for="state1">State:
-							<input type="text" name="state1">
+						<label for="state1" class="rightSide">State:
+							<input type="text" name="state1" id="state1" required>
 						</label>
 					</div>
 					<div>
 						<label for="zip1">Zip Code:
-							<input type="text" name="zip1" pattern="[0-9]{6}" placeholder="6 digit pincode">
+							<input type="text" name="zip1" pattern="[0-9]{6}" placeholder="6 digit pincode" id="zip1" required>
 						</label>
-						<label for="country1">Country:
-							<input type="text" name="country1">
+						<label for="country1" class="rightSide">Country:
+							<input type="text" name="country1" id="country1" required>
 						</label>
 					</div>
 				</fieldset>
 				<fieldset>
 					<legend>Permanent Address</legend>
-					<input type="checkbox" name="repeat">
-					<label for="repeat">Same as Current Address</label>
+					
+					<label for="repeat">
+						<input type="checkbox" name="repeat" id="repeat" >
+					Same as Current Address</label>
 					<div>
 						<label for="street2">Street Address:
-							<input type="text" name="street2">
+							<input type="text" name="street2" id="street2" required>
 						</label>
 					</div>
 					<div>
 						<label for="city2">City:
-							<input type="text" name="city2">
+							<input type="text" name="city2" id="city2" required>
 						</label>
-						<label for="state2">State:
-							<input type="text" name="state2">
+						<label for="state2" class="rightSide">State:
+							<input type="text" name="state2" id="state2" required>
 						</label>
 					</div>
 					<div>
 						<label for="zip2">Zip Code:
-							<input type="text" name="zip2" pattern="[0-9]{6}" placeholder="6 digit pincode">
+							<input type="text" name="zip2" id="zip2" pattern="[0-9]{6}" placeholder="6 digit pincode" required>
 						</label>
-						<label for="country2">Country:
-							<input type="text" name="country2">
+						<label for="country2" class="rightSide">Country:
+							<input type="text" name="country2" id="country2" required>
 						</label>
 					</div>
 				</fieldset>
@@ -150,12 +153,17 @@
 							<td><input type="text" name="diplomaPercent"></td>
 							<td><input type="month" name="diplomaYop"></td>
 						</tr>
+						<tr id="bachelor" class="Bachelors">
+							<td>Bachelor</td>
+							<td><input type="text" name="bachelorPercent"></td>
+							<td><input type="month" name="bachelorYop"></td>
+						</tr>
 					</table>
 				</div>
 				
 				<div>
 					<label for="courses">Course Applying for:
-						<select name="course">
+						<select name="course"  id="courses">
 							<option value="-1">Select:</option>
 							<option value="1">B.Tech</option>
 							<option value="2">B.Arch</option>
@@ -169,7 +177,7 @@
 
 				<!-- will only be visible if a student selects B.Tech or M.Tech -->
 				<div>
-					<label for="specialization">Specialization:
+					<label for="specialization" id="spec" class="specialization">Specialization:
 						<select name="course">
 							<option value="-1">Select:</option>
 							<option value="1">Civil Engineering</option>
@@ -193,4 +201,5 @@
 		</div>
 	</div>
 </body>
+<script src="assignment.js"></script>
 </html>
