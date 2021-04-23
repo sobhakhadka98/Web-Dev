@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Student Registration Form</title>
+	<link rel="stylesheet" type="text/css" href="assignment.css">
+	
+</head>
+<body>
+	<div class="regForm">
+		<div class="container">
+			<h1>STUDENT REGISTRATION FORM</h1>
+			<form action="#">
+				<div>
+					<label for="name">Full Name:
+						<input type="text" name="name" required>
+					</label>
+				</div>
+				
+				<!-- <label for="middleName">Middle Name:</label>
+				<input type="text" name="middleName"><br>
+				<label for="lastName">Last Name:</label>
+				<input type="text" name="lasttName">  -->
+
+				<div>
+					<label for="DOB">Date of Birth:
+						<input type="date" name="DOB" required id="DOB">
+					</label>
+				</div>
+				<div>
+					<label for="email">Email Id:
+						<input type="email" name="email" required>
+					</label>
+				</div>
+				<div>
+					<label for="mobile">Mobile no.:
+						<input type="tel" name="mobile" pattern="[0-9]{10}" required>
+					(Format: 10 digit phone number)</label>
+				</div>
+				<div>
+					<label for="gender" >Gender:</label><br>
+				
+					<label for="male">
+						<input type="radio" id="male" name="gender" value="male">
+					Male</label><br>
+					
+					<label for="female">
+						<input type="radio" id="female" name="gender" value="female">
+					Female</label><br>
+					
+					<label for="other">
+						<input type="radio" id="other" name="gender" value="other">
+					Prefer not to say</label><br>
+				</div>
+				<div>
+					<label>Category:
+						<select>
+							<option>Select</option>
+							<option>General</option>
+							<option>OBC</option>
+							<option>ST</option>
+							<option>SC</option>
+						</select>
+					</label>
+				</div>
+				<div>
+					<label>Blood Group:
+						<select>
+							<option>Select</option>
+							<option>AB+</option>
+							<option>AB-</option>
+							<option>A+</option>
+							<option>A-</option>
+							<option>B+</option>
+							<option>B-</option>
+							<option>O+</option>
+							<option>O-</option>
+						</select>
+					</label>
+				</div>
+				
+				<fieldset>
+					<legend>Current Address</legend>
+					<div>
+						<label for="street1">Street Address:
+							<input type="text" name="street1" id="street1" required>
+						</label>
+					</div>
+					<div>
+						<label for="city1">City:
+							<input type="text" name="city1" id="city1" required>
+						</label>
+						<label for="state1" class="rightSide">State:
+							<input type="text" name="state1" id="state1" required>
+						</label>
+					</div>
+					<div>
+						<label for="zip1">Zip Code:
+							<input type="text" name="zip1" pattern="[0-9]{6}" placeholder="6 digit pincode" id="zip1" required>
+						</label>
+						<label for="country1" class="rightSide">Country:
+							<input type="text" name="country1" id="country1" required>
+						</label>
+					</div>
+				</fieldset>
+				<fieldset>
+					<legend>Permanent Address</legend>
+					
+					<label for="repeat">
+						<input type="checkbox" name="repeat" id="repeat" >
+					Same as Current Address</label>
+					<div>
+						<label for="street2">Street Address:
+							<input type="text" name="street2" id="street2" required>
+						</label>
+					</div>
+					<div>
+						<label for="city2">City:
+							<input type="text" name="city2" id="city2" required>
+						</label>
+						<label for="state2" class="rightSide">State:
+							<input type="text" name="state2" id="state2" required>
+						</label>
+					</div>
+					<div>
+						<label for="zip2">Zip Code:
+							<input type="text" name="zip2" id="zip2" pattern="[0-9]{6}" placeholder="6 digit pincode" required>
+						</label>
+						<label for="country2" class="rightSide">Country:
+							<input type="text" name="country2" id="country2" required>
+						</label>
+					</div>
+				</fieldset>
+				<div>
+					<label for="qualification">Qualification</label>
+					<table>
+						<tr>
+							<th></th>
+							<th>%/CGPA</th>
+							<th>Year of Passing</th>
+						</tr>
+						<tr>
+							<td>Class 10</td>
+							<td><input type="text" name="10percent"></td>
+							<td><input type="month" name="10yop"></td>
+						</tr>
+						<tr>
+							<td>Class 12</td>
+							<td><input type="text" name="12percent"></td>
+							<td><input type="month" name="12yop"></td>
+						</tr>
+						<tr>
+							<td>Diploma</td>
+							<td><input type="text" name="diplomaPercent"></td>
+							<td><input type="month" name="diplomaYop"></td>
+						</tr>
+						<tr id="bachelor" class="Bachelors">
+							<td>Bachelor</td>
+							<td><input type="text" name="bachelorPercent"></td>
+							<td><input type="month" name="bachelorYop"></td>
+						</tr>
+					</table>
+				</div>
+				
+				<div>
+					<label for="courses">Course Applying for:
+						<select name="course"  id="courses">
+							<option value="-1">Select:</option>
+							<option value="1">B.Tech</option>
+							<option value="2">B.Arch</option>
+							<option value="3">Int. MSc</option>
+							<option value="4">M.Tech</option>
+							<option value="5">MCA</option>
+						</select>
+					</label>
+				</div>
+				
+
+				<!-- will only be visible if a student selects B.Tech or M.Tech -->
+				<div>
+					<label for="specialization" id="spec" class="specialization">Specialization:
+						<select name="course">
+							<option value="-1">Select:</option>
+							<option value="1">Civil Engineering</option>
+							<option value="2">Computer Science and Engineering</option>
+							<option value="3">Mechanical Engineering</option>
+							<option value="4">Electrical Engineering</option>
+							<option value="5">Electrical and Electronics Engineering</option>
+							<option value="6">Electronics and Telecommunication Engineering</option>
+							<option value="7">Information Technology</option>
+							<option value="8">Production Engineering</option>
+							<option value="9">Chemical Engineering</option>
+							<option value="10">Matellurgy and Materials Engineering</option>
+						</select>
+					</label>
+				</div>
+				
+				
+				<input type="Submit" name="Submit">
+
+			</form>
+		</div>
+	</div>
+</body>
+<!-- <script src="assignment.js"></script> -->
+<script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+<script src="jQassignment.js"></script>
+</html>

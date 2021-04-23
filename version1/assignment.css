@@ -1,0 +1,56 @@
+body{
+	/*background-repeat: no-repeat;*/
+	background-size: cover;
+	background-position: center;
+	background-attachment: fixed;
+	background-image: url(https://images.unsplash.com/photo-1596638787647-904d822d751e?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1162&q=80);
+}
+
+html{
+	height: 100%;
+}
+
+.regForm{
+	background-color: #f5f0f0;
+	width: 50%;
+	margin: auto;
+	border-radius: 30px; 
+}
+
+.container{
+	padding: 50px;
+}
+
+h1{
+	text-align: center;
+}
+
+input, select{
+	min-width: 20%;
+}
+
+table, tr, td{
+	border-collapse: collapse;
+	border: 2px solid gray;
+}
+
+td>input{
+	border: 0px;
+	/*height: 100%;*/
+}
+
+div{
+	padding-bottom: 10px;
+}
+
+.specialization {
+	display: none;
+}
+
+.Bachelors{
+	display: none;
+}
+
+.rightSide{
+	float: right;
+}
