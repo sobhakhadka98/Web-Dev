@@ -70,3 +70,12 @@ legend{
 hr{
     margin: 10px;
 }
+
+small{
+    color: #e74c3c;
+}
+
+.error {
+	
+	visibility: hidden;
+}
