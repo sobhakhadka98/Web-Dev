@@ -1,17 +1,169 @@
+var firstName = document.querySelector("#fname");
+var lastName = document.querySelector("#lname");
+var dob = document.getElementById("dob");
+var email = document.getElementById("email");
 var repeat = document.getElementById("repeat");
+var onlyNumeric = document.getElementsByClassName("onlyNumeric");
+var street1 = document.getElementById("street1");
+var country1 = document.getElementById("country1");
+var street2 = document.getElementById("street2");
+var country2 = document.getElementById("country2");
+var bachelor = document.querySelector("#bachelor");
 var courses = document.querySelector("#courses");
 var spec = document.querySelector("#spec");
 var spec2 = document.querySelector("#spec2");
-var bachelor = document.querySelector("#bachelor");
-var dob = document.getElementById("dob");
-var onlyNumeric = document.getElementsByClassName("onlyNumeric");
-var firstName = document.querySelector("#fname");
-var lastName = document.querySelector("#lname");
-var email = document.getElementById("email");
-var street1 = document.getElementById("street1");
-var street2 = document.getElementById("street2");
-var country1 = document.getElementById("country1");
-var country2 = document.getElementById("country2");
+var spec2 = document.querySelector("#spec3");
+var month, datee;
+var valid = false;
+
+firstName.onblur = () => {
+    if(firstName.value.length == 0){
+        document.getElementById("fnameError").classList.remove("error");
+        document.getElementById("fnameError").innerText = "First name can't be blank";
+    }
+    else {
+        document.getElementById("fnameError").classList.add("error");
+    }
+}
+
+lastName.onblur = () => {
+    if(lastName.value.length == 0){
+        document.getElementById("lnameError").classList.remove("error");
+        document.getElementById("lnameError").innerText = "Last name can't be blank";
+    }
+    else {
+        document.getElementById("lnameError").classList.add("error");
+    }
+}
+
+dob.onclick = () => {
+    var today = new Date(); 
+    
+    if(today.getMonth()<10)
+        month = "0" + (today.getMonth()+1).toString();
+    else
+        month = (today.getMonth()+1).toString();
+    datee = ((today.getFullYear()-17).toString())+"-"+ month +"-"+(today.getDate().toString());
+}
+
+dob.onblur = () => {
+    console.log("blur");
+    if(document.getElementById("dob").value>datee){
+        document.getElementById("dobError").classList.remove("error");
+        document.getElementById("dobError").innerHTML = "Please enter correct DOB. You are expected to be 17+"
+        dob.value="";
+    }
+    else {
+        document.getElementById("dobError").classList.add("error");
+    }
+}
+
+email.onblur = () => {
+    if(email.value.length == 0){
+        document.getElementById("emailError").classList.remove("error");
+        document.getElementById("emailError").innerText = "Email can't be blank";
+    }
+    else {
+        document.getElementById("emailError").classList.add("error");
+    }
+}
+
+email.onkeypress = () => {
+    if(!isEmail(email.value)){
+        document.getElementById("emailError").classList.remove("error");
+        document.getElementById("emailError").innerHTML = "Please enter in the format someone@example.com";
+    } else {
+        document.getElementById("emailError").classList.add("error");
+    }
+}
+
+function isEmail(email) {
+	return /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(email);
+}
+
+function checkIfNumber(evt) {
+    evt = (evt) ? evt : window.event;
+    var charCode = (evt.which) ? evt.which : evt.keyCode;
+    if (charCode > 31 && (charCode < 48 || charCode > 57)) {
+        document.getElementById("mobError").classList.remove("error");
+        document.getElementById("mobError").innerHTML = "Please enter only numeric";
+        return false;
+    }
+    document.getElementById("mobError").classList.add("error");
+    return true;
+}
+
+category.onblur = () => {
+    if(category.value == 0){
+        document.getElementById("categoryError").classList.remove("error");
+        document.getElementById("categoryError").innerText = "Category can't be blank";
+    }
+    else {
+        document.getElementById("categoryError").classList.add("error");
+    }
+}
+
+bloodGroup.onblur = () => {
+    if(bloodGroup.value == 0){
+        document.getElementById("bloodGroupError").classList.remove("error");
+        document.getElementById("bloodGroupError").innerText = "Blood Group can't be blank";
+    }
+    else {
+        document.getElementById("bloodGroupError").classList.add("error");
+    }
+}
+
+street1.onblur = () => {
+    if(street1.value.length == 0){
+        document.getElementById("street1Error").classList.remove("error");
+        document.getElementById("street1Error").innerText = "Address can't be blank";
+    }
+    else {
+        document.getElementById("street1Error").classList.add("error");
+    }
+}
+
+country1.onblur = () => {
+    if(country1.value == 0){
+        document.getElementById("country1Error").classList.remove("error");
+        document.getElementById("country1Error").innerText = "Country can't be blank";
+    }
+    else {
+        document.getElementById("country1Error").classList.add("error");
+    }
+}
+
+state1.onblur = () => {
+    if(state1.value == 0){
+        document.getElementById("state1Error").classList.remove("error");
+        document.getElementById("state1Error").innerText = "State can't be blank";
+    }
+    else {
+        document.getElementById("state1Error").classList.add("error");
+    }
+}
+
+city1.onblur = () => {
+    if(city1.value == 0){
+        document.getElementById("city1Error").classList.remove("error");
+        document.getElementById("city1Error").innerText = "City can't be blank";
+    }
+    else {
+        document.getElementById("city1Error").classList.add("error");
+    }
+}
+
+function checkZip1Number(evt) {
+    evt = (evt) ? evt : window.event;
+    var charCode = (evt.which) ? evt.which : evt.keyCode;
+    if (charCode > 31 && (charCode < 48 || charCode > 57)) {
+        document.getElementById("zip1Error").classList.remove("error");
+        document.getElementById("zip1Error").innerHTML = "Please enter only numeric";
+        return false;
+    }
+    document.getElementById("zip1Error").classList.add("error");
+    return true;
+}
 
 repeat.onclick = () => {
     if(repeat.checked == true){
@@ -36,6 +188,68 @@ repeat.onclick = () => {
     }
 }
 
+street2.onblur = () => {
+    if(street2.value.length == 0){
+        document.getElementById("street2Error").classList.remove("error");
+        document.getElementById("street2Error").innerText = "Address can't be blank";
+    }
+    else {
+        document.getElementById("street2Error").classList.add("error");
+    }
+}
+
+country2.onblur = () => {
+    if(country2.value == 0){
+        document.getElementById("country2Error").classList.remove("error");
+        document.getElementById("country2Error").innerText = "Country can't be blank";
+    }
+    else {
+        document.getElementById("country2Error").classList.add("error");
+    }
+}
+
+state2.onblur = () => {
+    if(state2.value == 0){
+        document.getElementById("state2Error").classList.remove("error");
+        document.getElementById("state2Error").innerText = "State can't be blank";
+    }
+    else {
+        document.getElementById("state2Error").classList.add("error");
+    }
+}
+
+city2.onblur = () => {
+    if(city2.value == 0){
+        document.getElementById("city2Error").classList.remove("error");
+        document.getElementById("city2Error").innerText = "City can't be blank";
+    }
+    else {
+        document.getElementById("city2Error").classList.add("error");
+    }
+}
+
+function checkZip2Number(evt) {
+    evt = (evt) ? evt : window.event;
+    var charCode = (evt.which) ? evt.which : evt.keyCode;
+    if (charCode > 31 && (charCode < 48 || charCode > 57)) {
+        document.getElementById("zip2Error").classList.remove("error");
+        document.getElementById("zip2Error").innerHTML = "Please enter only numeric";
+        return false;
+    }
+    document.getElementById("zip2Error").classList.add("error");
+    return true;
+}
+
+courses.onblur = () => {
+    if(courses.value == 0){
+        document.getElementById("coursesError").classList.remove("error");
+        document.getElementById("coursesError").innerText = "Courses can't be blank";
+    }
+    else {
+        document.getElementById("coursesError").classList.add("error");
+    }
+}
+
 courses.onclick = () => {
     if (courses.selectedIndex == 1 || courses.selectedIndex == 4)
     {
@@ -54,40 +268,17 @@ courses.onclick = () => {
     }
 };
 
-var month, datee;
-bool valid;
-
-dob.onclick = () => {
-    var today = new Date(); 
-    
-    if(today.getMonth()<10)
-        month = "0" + (today.getMonth()+1).toString();
-    else
-        month = (today.getMonth()+1).toString();
-    datee = ((today.getFullYear()-17).toString())+"-"+ month +"-"+(today.getDate().toString());
-    if(document.getElementById("dob").value>datee){
-        valid = false;
-        
+spec3.onblur = () => {
+    if(spec3.value == 0){
+        document.getElementById("spec3Error").classList.remove("error");
+        document.getElementById("spec3Error").innerText = "Specialization can't be blank";
     }
     else {
-        valid = true;
-        
-    }
-}
-
-dob.onblur = () => {
-    if(!valid){
-        document.getElementById("dobError").classList.remove("error");
-        document.getElementById("dobError").innerHTML = "Please enter correct DOB. You are expected to be 17+"
-        dob.value="";
-    }
-    else {
-        document.getElementById("dobError").classList.add("error");
+        document.getElementById("spec3Error").classList.add("error");
     }
 }
 
 //Dynamically loading state and city
-
 var myObj1 = 
 {
     init:function()
@@ -241,89 +432,3 @@ var myObj2 =
     }
 }
 myObj2.init();
-
-function isNumber(evt) {
-    evt = (evt) ? evt : window.event;
-    var charCode = (evt.which) ? evt.which : evt.keyCode;
-    if (charCode > 31 && (charCode < 48 || charCode > 57)) {
-        // console.log("error");
-        document.getElementById("mobError").classList.remove("error");
-        document.getElementById("mobError").innerHTML = "Please enter only numeric";
-        return false;
-    }
-    document.getElementById("mobError").classList.add("error");
-    return true;
-}
-
-firstName.onblur = () => {
-    if(firstName.value.length == 0){
-        document.getElementById("fnameError").classList.remove("error");
-        document.getElementById("fnameError").innerText = "First name can't be blank";
-    }
-    else {
-        document.getElementById("fnameError").classList.add("error");
-    }
-}
-
-lastName.onblur = () => {
-    if(lastName.value.length == 0){
-        document.getElementById("lnameError").classList.remove("error");
-        document.getElementById("lnameError").innerText = "Last name can't be blank";
-    }
-    else {
-        document.getElementById("lnameError").classList.add("error");
-    }
-}
-
-email.onblur = () => {
-    if(email.value.length == 0){
-        document.getElementById("emailError").classList.remove("error");
-        document.getElementById("emailError").innerText = "Email can't be blank";
-    }
-    else {
-        document.getElementById("emailError").classList.add("error");
-    }
-}
-
-email.onkeypress = () => {
-    if(!isEmail(email.value)){
-        document.getElementById("emailError").classList.remove("error");
-        document.getElementById("emailError").innerHTML = "Please enter in the format someone@example.com";
-    } else {
-        document.getElementById("emailError").classList.add("error");
-    }
-}
-
-function isEmail(email) {
-	return /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(email);
-}
-
-street1.onblur = () => {
-    if(street1.value.length == 0){
-        document.getElementById("street1Error").classList.remove("error");
-        document.getElementById("street1Error").innerText = "Address can't be blank";
-    }
-    else {
-        document.getElementById("street1Error").classList.add("error");
-    }
-}
-
-street2.onblur = () => {
-    if(street2.value.length == 0){
-        document.getElementById("street2Error").classList.remove("error");
-        document.getElementById("street2Error").innerText = "Address can't be blank";
-    }
-    else {
-        document.getElementById("street2Error").classList.add("error");
-    }
-}
-
-country1.onblur = () => {
-    if(country1.value == 0){
-        document.getElementById("country1Error").classList.remove("error");
-        document.getElementById("country1Error").innerText = "Country can't be blank";
-    }
-    else {
-        document.getElementById("country1Error").classList.add("error");
-    }
-}
