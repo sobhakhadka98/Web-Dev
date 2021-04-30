@@ -11,6 +11,8 @@
 		<div >
 			<h1>STUDENT REGISTRATION FORM</h1>
 			<form action="#">
+
+				<!-- Name -->
                 <div class="row">
                     <div class="col">
                         <label for="firstName" class="form-label">First Name:</label>
@@ -27,6 +29,8 @@
 						<small class="error" id="lnameError">Error message</small>
                     </div>
                 </div>
+
+				<!-- DOB -->
 				<div class="row mb-6">
                     <label for="DOB" class="col-sm-2 col-form-label">Date of Birth:</label>
                     <div class="col-sm-10"> 
@@ -35,21 +39,26 @@
                     </div>
 					
 				</div>
+
+				<!-- Email -->
 				<div class="row">
 					<label for="email" class="col-sm-2 col-form-label">Email Id:</label>
                     <div class="col-sm-10">
                         <input type="email" name="email" class="form-control" id="email" placeholder="someone@example.com" required>
 						<small class="error" id="emailError">Error message</small>
                     </div>
-					
 				</div>
+
+				<!-- Mobile number -->
 				<div class="row">
 					<label for="mobile" class="col-sm-2 col-form-label">Mobile no.:</label>
                     <div class="col-sm-10">
-                        <input type="tel" name="mobile" class="form-control" pattern="[0-9]{10}" placeholder="10 digit phone number" onkeypress="return isNumber(event)" required>
+                        <input type="tel" name="mobile" class="form-control" pattern="[0-9]{10}" placeholder="10 digit phone number" onkeypress="return checkIfNumber(event)" required>
 						<small class="error" id="mobError">Error message</small>
                     </div>
 				</div>
+
+				<!-- Gender -->
                 <div class="row">
                     <div class="col-md-2">
                         <label for="gender" class="col-form-label">Gender:</label>
@@ -69,37 +78,42 @@
                         </div>
                     </div>
                 </div>
-                
 
+				<!-- Category -->
 				<div class="row">
 					<label class="col-sm-2 col-form-label">Category:</label>
                     <div class="col-sm-10">
-                        <select class="form-control">
-							<option>Select</option>
-							<option>General</option>
-							<option>OBC</option>
-							<option>ST</option>
-							<option>SC</option>
+                        <select class="form-control" id="category">
+							<option value="0">Select</option>
+							<option value="1">General</option>
+							<option value="2">OBC</option>
+							<option value="3">ST</option>
+							<option value="4">SC</option>
 						</select>
+						<small class="error" id="categoryError">Error message</small>
                     </div>
 				</div>
+
+				<!-- Blood Group -->
 				<div class="row">
 					<label class="col-sm-2 col-form-label">Blood Group:</label>
                     <div class="col-sm-10">
-                        <select class="form-control">
-							<option>Select</option>
-							<option>AB+</option>
-							<option>AB-</option>
-							<option>A+</option>
-							<option>A-</option>
-							<option>B+</option>
-							<option>B-</option>
-							<option>O+</option>
-							<option>O-</option>
+                        <select class="form-control" id="bloodGroup">
+							<option value="0">Select</option>
+							<option value="1">AB+</option>
+							<option value="2">AB-</option>
+							<option value="3">A+</option>
+							<option value="4">A-</option>
+							<option value="5">B+</option>
+							<option value="6">B-</option>
+							<option value="7">O+</option>
+							<option value="8">O-</option>
 						</select>
+						<small class="error" id="bloodGroupError">Error message</small>
                     </div>	
 				</div>
 				
+				<!-- Current Address -->
 				<fieldset>
 					<legend>Current Address</legend><hr>
 					<div class="row">
@@ -123,9 +137,9 @@
                         <div class="col-sm-4">
                             <!-- <input type="text" name="state1" class="form-control" id="state1" required> -->
 							<select name="state1" id="state1"  class="form-control">
-								<small class="error" id="state1Error">Error message</small>
 								<option value="0"></option>
 							</select>
+							<small class="error" id="state1Error">Error message</small>
                         </div>	
 					</div>
 
@@ -134,18 +148,20 @@
                         <div class="col-sm-4">
                             <!-- <input type="text" name="city1" class="form-control" id="city1" required> -->
 							<select name="city1" id="city1"  class="form-control">
-								<small class="error" id="city1Error">Error message</small>
 								<option value="0"></option>
 							</select>
+							<small class="error" id="city1Error">Error message</small>
                         </div>
 						<label for="zip1" class="col-sm-2 col-form-label">Zip Code:</label>
                         <div class="col-sm-4">
-                            <input type="text" name="zip1" class="form-control" pattern="[0-9]{6}" placeholder="6 digit pincode" id="zip1" onkeypress="return isNumber(event)" required>
+                            <input type="text" name="zip1" class="form-control" pattern="[0-9]{6}" placeholder="6 digit pincode" id="zip1" onkeypress="return checkZip1Number(event)" required>
 							<small class="error" id="zip1Error">Error message</small>
                         </div>
 
 					</div>
 				</fieldset>
+
+				<!-- Permanent Address -->
 				<fieldset>
 					<legend>Permanent Address</legend><hr>
 					<div class="form-check form-switch">
@@ -164,17 +180,17 @@
                         <div class="col-sm-4">
                             <!-- <input type="text" name="country1" class="form-control" id="country1" required> -->
 							<select name="country2" id="country2" class="form-control">
-								<small class="error" id="country2Error">Error message</small>
 								<option value="0"></option>
 							</select>
+							<small class="error" id="country2Error">Error message</small>
                         </div>
 						<label for="state2" class="col-sm-2 col-form-label">State:</label>
                         <div class="col-sm-4">
                             <!-- <input type="text" name="state1" class="form-control" id="state1" required> -->
 							<select name="state2" id="state2"  class="form-control">
-								<small class="error" id="state2Error">Error message</small>
 								<option value="0"></option>
 							</select>
+							<small class="error" id="state2Error">Error message</small>
                         </div>	
 					</div>
 
@@ -183,18 +199,20 @@
                         <div class="col-sm-4">
                             <!-- <input type="text" name="city1" class="form-control" id="city1" required> -->
 							<select name="city2" id="city2"  class="form-control">
-								<small class="error" id="city2Error">Error message</small>
 								<option value="0"></option>
 							</select>
+							<small class="error" id="city2Error">Error message</small>
                         </div>
 						<label for="zip2" class="col-sm-2 col-form-label onlyNumeric">Zip Code:</label>
                         <div class="col-sm-4">
-                            <input type="text" name="zip2" class="form-control" pattern="[0-9]{6}" placeholder="6 digit pincode" id="zip2" onkeypress="return isNumber(event)" required>
+                            <input type="text" name="zip2" class="form-control" pattern="[0-9]{6}" placeholder="6 digit pincode" id="zip2" onkeypress="return checkZip2Number(event)" required>
 							<small class="error" id="zip2Error">Error message</small>
                         </div>
 
 					</div>
 				</fieldset>
+
+				<!-- Qualification -->
                 <label for="qualification">Qualification</label>
 					<table>
                         <tr>
@@ -230,27 +248,28 @@
 					</table>
 				</div>
 				
+				<!-- Courses -->
 				<div class="row">
 					<label for="courses" class="col-sm-2 col-form-label">Course Opting:</label>
                     <div class="col-sm-10">
                         <select name="course"  id="courses" class="form-control">
-							<option value="-1">Select:</option>
+							<option value="0">Select:</option>
 							<option value="1">B.Tech</option>
 							<option value="2">B.Arch</option>
 							<option value="3">Int. MSc</option>
 							<option value="4">M.Tech</option>
 							<option value="5">MCA</option>
 						</select>
+						<small class="error" id="coursesError">Error message</small>
                     </div>	
 				</div>
 				
-
-				<!-- will only be visible if a student selects B.Tech or M.Tech -->
+				<!-- Specialization -->
 				<div class="row">
 					<label for="specialization" id="spec" class="col-sm-2 col-form-label specialization">Specialization:</label>
                     <div class="col-sm-10 specialization" id="spec2">
-                        <select name="course"  class="form-control">
-							<option value="-1">Select:</option>
+                        <select name="course"  class="form-control" id="spec3">
+							<option value="0">Select:</option>
 							<option value="1">Civil Engineering</option>
 							<option value="2">Computer Science and Engineering</option>
 							<option value="3">Mechanical Engineering</option>
@@ -262,13 +281,14 @@
 							<option value="9">Chemical Engineering</option>
 							<option value="10">Matellurgy and Materials Engineering</option>
 						</select>
+						<small class="error" id="spec3Error">Error message</small>
                     </div>	
 				</div>
 				
+				<!-- Submit Button -->
 				<div class="d-grid gap-2">
                     <button class="btn btn-success">Submit</button>
                 </div>
-				
 
 			</form>
 		</div>
